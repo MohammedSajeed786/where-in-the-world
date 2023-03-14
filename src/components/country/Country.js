@@ -1,19 +1,19 @@
 import "./Country.css";
-import { React, useEffect, useState,useContext} from "react";
+import { React, useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 // const BrowserHistory = require('react-router/lib/BrowserHistory').default;
 import { ThemeContext } from "../../context/ThemeContextProvider";
 
 export default function Country() {
-  const {theme,updateTheme}=useContext(ThemeContext);
+  const { theme, updateTheme } = useContext(ThemeContext);
   let { name } = useParams();
   const [data, setData] = useState(null);
   const [curr, setCurr] = useState(null);
   const [lang, setLang] = useState(null);
   const [borders, setBorders] = useState(null);
-  
+
   const getDetails = async () => {
-    let url = `https://restcountries.com/v3.1/name/${name}`;
+    let url = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
     let response = await fetch(url);
     if (response.ok) {
       let details = await response.json();
@@ -41,7 +41,12 @@ export default function Country() {
   return (
     <>
       <div className={`cd-wrapper cd-wrapper-${theme}`}>
-        <button className={`back back-${theme}`} onClick={()=>{navigate(-1)}}>
+        <button
+          className={`back back-${theme}`}
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
           <i class="fa-sharp fa-solid fa-arrow-left"></i> &nbsp;Back
         </button>
         {data ? (
