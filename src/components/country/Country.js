@@ -12,6 +12,7 @@ export default function Country() {
   const [lang, setLang] = useState(null);
   const [borders, setBorders] = useState(null);
 
+  
   const getDetails = async () => {
     let url = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
     let response = await fetch(url);
