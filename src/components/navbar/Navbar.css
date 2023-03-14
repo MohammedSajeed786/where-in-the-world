@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 70px;
+  font-weight: bold;
+  position: sticky;
+  top: 0%;
+  height: 70px;
+  box-sizing: border-box;
+  background-color:var(--light-element-color);
+  font-size: 14px;
+  box-shadow:var(--light-box-shadow);
+  z-index: 10;
+  cursor: pointer;
+}
+.navbar-dark {
+  background-color:var(--dark-element-color);
+  box-shadow: var(--dark-box-shadow);
+  color: var(--dark-text-color);
+}
+.icon {
+  margin: 0px 10px;
+}
+.mode {
+  text-transform: capitalize;
+  cursor: pointer;
+  color: var(--light-input-color)
+}
+.mode-dark {
+  color: var(--dark-input-color);
+}
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  .navbar {
+    padding: 10px 40px;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 640px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  .navbar h1 {
+    font-size: 16px;
+  }
+}
